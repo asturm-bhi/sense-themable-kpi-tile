@@ -33,23 +33,25 @@ define(["jquery", "underscore", "./properties", "./lib/js/extensionUtils", "css!
             <span class="icon" ng-bind-html="kpiIcon"></span> \
 			<span class="text" \
                   ng-bind="layout.props.kpiComparisonLabel || layout.props.kpiComparison" \
-                ></span> \
+              ng-if="layout.props.kpiComparison != layout.props.kpiComparison"></span> \
+			<span class="text" \
+				ng-if="!layout.props.kpiComparison != layout.props.kpiComparison">N/A</span> \
         </div> \
     </div> \
 \
 </div>';
-
+						
     var layouts = {
         "default": {
             "name": "Default",
-            "tileBackgroundColor": "#F8F8F8",
-            "titleColor": "#333333",
-            "comparisonPositiveColor": "#006600",
-            "comparisonNegativeColor": "#CC0000",
-            "comparisonNeutralColor": "#333333",
+            "tileBackgroundColor": "#FFFFFF",
+            "titleColor": "#000000",
+            "comparisonPositiveColor": "#46c646",
+            "comparisonNegativeColor": "#f93f17",
+            "comparisonNeutralColor": "#000000",
             "comparisonPositiveIcon": "&#9650;",
             "comparisonNegativeIcon": "&#9660;",
-            "comparisonNeutralIcon": "&#9654;"
+            "comparisonNeutralIcon": "&#6;"
         },
         "green": {
             "name": "Green",
@@ -94,14 +96,14 @@ define(["jquery", "underscore", "./properties", "./lib/js/extensionUtils", "css!
             $scope.get = function (key) {
                 if (!$scope.layout.props || !$scope.layout.props.layoutMode) return "";
                 var defaults = {
-                    tileBackgroundColor: "#E7E7E7",
-                    titleColor: "#333333",
-                    comparisonPositiveColor: "#006600",
-                    comparisonNegativeColor: "#CC0000",
-                    comparisonNeutralColor: "#333333",
+                    tileBackgroundColor: "#FFFFFF",
+                    titleColor: "#000000",
+                    comparisonPositiveColor: "#46c646",
+                    comparisonNegativeColor: "#f93f17",
+                    comparisonNeutralColor: "#000000",
                     comparisonPositiveIcon: "&#9650;",
                     comparisonNegativeIcon: "&#9660;",
-                    comparisonNeutralIcon: "&#9654;"
+                    comparisonNeutralIcon: "&#6;"
                 };
                 switch ($scope.layout.props.layoutMode) {
                 case "default":
