@@ -31,16 +31,15 @@ define(["jquery", "underscore", "./properties", "./lib/js/extensionUtils", "css!
         <div class="colored-kpi-comparison" \
              ng-style="kpiComparisonStyle"> \
             <span class="icon" ng-bind-html="kpiIcon"></span> \
-			<span class="text" \
-                  ng-bind="layout.props.kpiComparisonLabel || layout.props.kpiComparison" \
-              ng-if="layout.props.kpiComparison != layout.props.kpiComparison"></span> \
-			<span class="text" \
-				ng-if="!layout.props.kpiComparison != layout.props.kpiComparison">N/A</span> \
+\
+			 <span class="text" \
+                  ng-bind="layout.props.kpiComparison" \
+             </span> \
         </div> \
     </div> \
 \
 </div>';
-						
+
     var layouts = {
         "default": {
             "name": "Default",
@@ -91,6 +90,12 @@ define(["jquery", "underscore", "./properties", "./lib/js/extensionUtils", "css!
             }
 
             function setKpiIcon() {
+				if(isNaN($scope.layout.props.kpiComparison)){
+					$scope.layout.props.kpiComparison = "N/A";
+				}else{
+					var num = parseFloat($scope.layout.props.kpiComparison);
+					$scope.layout.props.kpiComparison = num.toFixed(2);
+				}
                 return $scope.layout.props && $scope.layout.props.layoutMode ? void($scope.kpiIcon = $sce.trustAsHtml($scope.layout.props.kpiComparison > 0 ? $scope.get("comparisonPositiveIcon") : $scope.layout.props.kpiComparison < 0 ? $scope.get("comparisonNegativeIcon") : $scope.get("comparisonNeutralIcon"))) : ""
             }
             $scope.get = function (key) {
