@@ -50,7 +50,7 @@ define(["jquery", "underscore", "./properties", "./lib/js/extensionUtils", "css!
             "comparisonNeutralColor": "#000000",
             "comparisonPositiveIcon": "&#9650;",
             "comparisonNegativeIcon": "&#9660;",
-            "comparisonNeutralIcon": "&#6;"
+            "comparisonNeutralIcon": "&#9644;"
         },
         "green": {
             "name": "Green",
@@ -61,7 +61,7 @@ define(["jquery", "underscore", "./properties", "./lib/js/extensionUtils", "css!
             "comparisonNeutralColor": "#333",
             "comparisonPositiveIcon": "&#9650;",
             "comparisonNegativeIcon": "&#9660;",
-            "comparisonNeutralIcon": "&#9654;"
+            "comparisonNeutralIcon": "&#9644;"
         },
         "orange": {
             "name": "Orange",
@@ -72,7 +72,7 @@ define(["jquery", "underscore", "./properties", "./lib/js/extensionUtils", "css!
             "comparisonNeutralColor": "#333",
             "comparisonPositiveIcon": "&#9650;",
             "comparisonNegativeIcon": "&#9660;",
-            "comparisonNeutralIcon": "&#9654;"
+            "comparisonNeutralIcon": "&#9644;"
         }
     };
     return {
@@ -108,7 +108,7 @@ define(["jquery", "underscore", "./properties", "./lib/js/extensionUtils", "css!
                     comparisonNeutralColor: "#000000",
                     comparisonPositiveIcon: "&#9650;",
                     comparisonNegativeIcon: "&#9660;",
-                    comparisonNeutralIcon: "&#6;"
+                    comparisonNeutralIcon: "&#9644;"
                 };
                 switch ($scope.layout.props.layoutMode) {
                 case "default":
